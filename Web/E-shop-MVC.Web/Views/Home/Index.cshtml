@@ -1,0 +1,13 @@
+﻿@model IEnumerable<E_shop_MVC.Web.ViewModels.Home.ProductViewModel>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="row">
+    @foreach (var product in Model)
+    {
+    <div class="col-md-4">
+        <a href="">@product.Title</a>
+    </div>
+    }
+</div>
