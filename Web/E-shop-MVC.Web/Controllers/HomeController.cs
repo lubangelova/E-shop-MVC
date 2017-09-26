@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
-using E_shop_MVC.Data;
 using E_shop_MVC.Data.Common;
 using E_shop_MVC.Data.Models;
+using E_shop_MVC.Web.Infrastructure.Mapping;
 using E_shop_MVC.Web.ViewModels.Home;
 
 namespace E_shop_MVC.Web.Controllers
@@ -39,8 +36,10 @@ namespace E_shop_MVC.Web.Controllers
 
         public ActionResult Index()
         {
-            var products = this.products.All().
-                Select(x => new ProductViewModel() { Title = x.Title }).ToList();
+            var products = this.products.All()
+                .OrderBy(x=>x.Title)
+                .To<ProductViewModel>()
+                .ToList();
             return View(products);
         }
 
