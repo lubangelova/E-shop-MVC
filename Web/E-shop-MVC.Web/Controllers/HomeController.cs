@@ -11,9 +11,9 @@ namespace E_shop_MVC.Web.Controllers
     public class HomeController : Controller
     {
         private IProductsService products;
-        private IDbRepository<ProductCategory> categories;
+        private ICategoriesService categories;
 
-        public HomeController(IProductsService products, IDbRepository<ProductCategory> categories)
+        public HomeController(IProductsService products, ICategoriesService categories)
         {
             this.products = products;
             this.categories = categories;
@@ -40,7 +40,15 @@ namespace E_shop_MVC.Web.Controllers
             var products =this.products.GetAllProducts()
                 .To<ProductViewModel>()
                 .ToList();
-            return View(products);
+            var categories = this.categories.GetAllCategories()
+                .To<ProductCategoryViewModel>().
+                ToList();
+            var viewModel = new IndexViewModel
+            {
+                Products = products,
+                Categories = categories
+            };
+            return View(viewModel);
         }
 
         public ActionResult About()
