@@ -9,6 +9,7 @@ using Autofac;
 using Autofac.Integration.Mvc;
 using E_shop_MVC.Data;
 using E_shop_MVC.Data.Common;
+using E_shop_MVC.Service.Data;
 
 namespace E_shop_MVC.Web.App_Start
 {
@@ -45,7 +46,11 @@ namespace E_shop_MVC.Web.App_Start
         private static void RegisterServices(ContainerBuilder builder)
         {           
             builder.Register(x => new ApplicationDbContext()).As<DbContext>().InstancePerRequest();
-            builder.RegisterGeneric(typeof(DbRepository<>)).As(typeof(IDbRepository<>)).InstancePerRequest(); 
+
+            builder.RegisterGeneric(typeof(DbRepository<>)).As(typeof(IDbRepository<>)).InstancePerRequest();
+
+            var servicesAssembly = Assembly.GetAssembly(typeof(IProductsService));
+            builder.RegisterAssemblyTypes(servicesAssembly).AsImplementedInterfaces();
         }
     }
 }

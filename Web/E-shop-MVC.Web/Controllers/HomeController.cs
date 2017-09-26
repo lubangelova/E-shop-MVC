@@ -2,6 +2,7 @@
 using System.Web.Mvc;
 using E_shop_MVC.Data.Common;
 using E_shop_MVC.Data.Models;
+using E_shop_MVC.Service.Data;
 using E_shop_MVC.Web.Infrastructure.Mapping;
 using E_shop_MVC.Web.ViewModels.Home;
 
@@ -9,10 +10,10 @@ namespace E_shop_MVC.Web.Controllers
 {
     public class HomeController : Controller
     {
-        private IDbRepository<Product> products;
+        private IProductsService products;
         private IDbRepository<ProductCategory> categories;
 
-        public HomeController(IDbRepository<Product> products, IDbRepository<ProductCategory> categories)
+        public HomeController(IProductsService products, IDbRepository<ProductCategory> categories)
         {
             this.products = products;
             this.categories = categories;
@@ -36,8 +37,7 @@ namespace E_shop_MVC.Web.Controllers
 
         public ActionResult Index()
         {
-            var products = this.products.All()
-                .OrderBy(x=>x.Title)
+            var products =this.products.GetAllProducts()
                 .To<ProductViewModel>()
                 .ToList();
             return View(products);

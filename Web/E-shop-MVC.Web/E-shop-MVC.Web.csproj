@@ -52,6 +52,10 @@
       <HintPath>..\..\packages\Autofac.Mvc5.4.0.2\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="AutoMapper, Version=4.2.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AutoMapper.4.2.0\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -313,6 +317,10 @@
     <ProjectReference Include="..\..\Data\E-shop-MVC.Data\E-shop-MVC.Data.csproj">
       <Project>{b0ffd656-9cc7-4e5b-b6d4-c11bd033f1ca}</Project>
       <Name>E-shop-MVC.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\E-shop-MVC.Service.Data\E-shop-MVC.Service.Data.csproj">
+      <Project>{3BBF5550-4803-4DEB-8F8D-465EE6F9A44E}</Project>
+      <Name>E-shop-MVC.Service.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\E-shop-MVC.Web.Infrastructure\E-shop-MVC.Web.Infrastructure.csproj">
       <Project>{D660F245-5F0C-4D78-B252-85A05A4ACDB3}</Project>
