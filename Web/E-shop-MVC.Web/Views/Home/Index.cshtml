@@ -1,23 +1,11 @@
-﻿@model E_shop_MVC.Web.ViewModels.Home.IndexViewModel
+﻿
 @{
     ViewBag.Title = "Home Page";
 }
 
 <div class="row">
-    @foreach (var product in Model.Products)
-    {
-    <div class="col-md-4">
-        <a href="">@product.Title</a>
-        <div>@product.Category</div>
-    </div>
-    }
+   <h2>Home page</h2>
+    <p>This is home page!</p> 
 </div>
 
-<div class="row">
-    @foreach (var category in Model.Categories)
-    {
-        <div class="col-md-2">
-            <a href="">@category.Name</a>
-        </div>
-    }
-</div>
+

@@ -3,8 +3,6 @@ using System.Web.Mvc;
 using E_shop_MVC.Data.Common;
 using E_shop_MVC.Data.Models;
 using E_shop_MVC.Service.Data;
-using E_shop_MVC.Web.Infrastructure.Mapping;
-using E_shop_MVC.Web.ViewModels.Home;
 
 namespace E_shop_MVC.Web.Controllers
 {
@@ -36,33 +34,9 @@ namespace E_shop_MVC.Web.Controllers
         //}
 
         public ActionResult Index()
-        {
-            var products =this.products.GetAllProducts()
-                .To<ProductViewModel>()
-                .ToList();
-            var categories = this.categories.GetAllCategories()
-                .To<ProductCategoryViewModel>().
-                ToList();
-            var viewModel = new IndexViewModel
-            {
-                Products = products,
-                Categories = categories
-            };
-            return View(viewModel);
-        }
-
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
+        { 
             return View();
         }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
+      
     }
 }

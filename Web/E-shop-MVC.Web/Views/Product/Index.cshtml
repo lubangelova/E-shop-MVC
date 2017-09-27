@@ -1,0 +1,37 @@
+﻿@model E_shop_MVC.Web.ViewModels.Product.IndexViewModel
+@{
+    ViewBag.Title = "Products";
+}
+<ul>
+    @if (Model.Categories.Count != 0)
+    {
+        foreach (var category in Model.Categories)
+           {
+              <li>
+                 <a href="">@category.Name</a>
+              </li>
+           }
+    }
+</ul>
+<hr />
+@if (Model.Products.Count != 0)
+{
+<div id="accordion" class="event-box">
+    @foreach (var product in Model.Products)
+    {
+         <h3>@product.Title</h3>
+         <div>
+             <p>Category: @product.Category</p>
+             <p>Content: @product.Content</p>
+             <p>Price: @product.Price</p>
+         </div>      
+    }
+</div>
+}
+else
+{
+<h3>There are no products</h3>
+}
+
+
+
