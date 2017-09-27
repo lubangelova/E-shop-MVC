@@ -10,6 +10,8 @@ namespace E_shop_MVC.Web.ViewModels.Product
 {
     public class ProductViewModel : IMapFrom<E_shop_MVC.Data.Models.Product>, IMapTo<E_shop_MVC.Data.Models.Product>, IHaveCustomMappings
     {
+        public int Id { get; set; }
+
         public string Title { get; set; }
 
         public string Content { get; set; }

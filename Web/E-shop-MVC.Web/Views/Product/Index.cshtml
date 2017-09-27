@@ -2,35 +2,54 @@
 @{
     ViewBag.Title = "Products";
 }
+<h2>Products</h2>
+<nav class="navbar navbar-inverse zrow">
+    <ul class="nav navbar-nav col-md-8">
+        <li><a href="">Browse products</a></li>
+        <li><a href="">Manage your products</a></li>
+        <li><a href="">Add new product</a></li>
+    </ul>
+</nav>
+<h3><a href="">Categories</a></h3>
 <ul>
     @if (Model.Categories.Count != 0)
     {
         foreach (var category in Model.Categories)
-           {
-              <li>
-                 <a href="">@category.Name</a>
-              </li>
-           }
+        {
+            <li>
+                <a href="">@category.Name</a>
+            </li>
+        }
     }
 </ul>
 <hr />
 @if (Model.Products.Count != 0)
 {
-<div id="accordion" class="event-box">
-    @foreach (var product in Model.Products)
+    foreach (var product in Model.Products)
     {
-         <h3>@product.Title</h3>
-         <div>
-             <p>Category: @product.Category</p>
-             <p>Content: @product.Content</p>
-             <p>Price: @product.Price</p>
-         </div>      
+    <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse/@product.Id">
+                       @product.Title
+                    </a>
+                </h4>
+            </div>
+            <div id="#collapse/@product.Id" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <p>Category: @product.Category</p>
+                    <p>Content: @product.Content</p>
+                    <p>Price: @product.Price</p>
+                </div>
+            </div>
+        </div>
+    </div>
+        }
     }
-</div>
-}
 else
 {
-<h3>There are no products</h3>
+  <h3>There are no products</h3>
 }
 
 

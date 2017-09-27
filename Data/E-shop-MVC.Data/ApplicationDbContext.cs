@@ -26,6 +26,8 @@ namespace E_shop_MVC.Data
 
         public IDbSet<ProductCategory> ProductsCategories { get; set; }
 
+        public IDbSet<Message> Messages { get; set; }
+
         public override int SaveChanges()
         {
             this.ApplyAuditInfoRules();
