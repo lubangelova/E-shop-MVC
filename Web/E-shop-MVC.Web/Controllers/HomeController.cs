@@ -8,13 +8,9 @@ namespace E_shop_MVC.Web.Controllers
 {
     public class HomeController : Controller
     {
-        private IProductsService products;
-        private ICategoriesService categories;
 
-        public HomeController(IProductsService products, ICategoriesService categories)
+        public HomeController()
         {
-            this.products = products;
-            this.categories = categories;
         }
 
         //public HomeController()

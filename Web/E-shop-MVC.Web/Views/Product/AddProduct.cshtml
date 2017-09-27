@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "AddProduct";
+}
+<h2>Products</h2>
+<nav class="navbar navbar-inverse zrow">
+    <ul class="nav navbar-nav col-md-8">
+        <li>@Html.ActionLink("Search", "Search", "Product")</li>
+        <li>@Html.ActionLink("Your products", "YourProducts", "Product")</li>
+        <li>@Html.ActionLink("Add product", "AddProduct", "Product")</li>
+    </ul>
+</nav>
+<fieldset>
+    <h2>Add new product</h2>
+    <div class="form-group">
+        <label for="tb-product-title">Title:</label>
+        <input type="text" class="form-control" id="tb-product-title" />
+    </div>
+    <div class="form-group">
+        <label for="tb-product-description">Content:</label>
+        <input type="text" id="tb-product-description" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="tb-product-category">Category:</label>
+        <input type="text" id="tb-product-category" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="tb-product-price">Price:</label>
+        <input type="text" id="tb-product-price" class="form-control" />
+    </div>
+    <button class="btn btn-primary" id="btn-product-add">Add</button>
+</fieldset>
+

@@ -35,5 +35,20 @@ namespace E_shop_MVC.Web.Controllers
             };
             return View(viewModel);
         }
+
+        public ActionResult Search()
+        {
+            return View();
+        }
+
+        public ActionResult YourProducts()
+        {
+            return View();
+        }
+
+        public ActionResult AddProduct()
+        {
+            return View();
+        }
     }
 }
