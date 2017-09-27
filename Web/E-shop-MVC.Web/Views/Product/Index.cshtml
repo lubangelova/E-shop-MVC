@@ -31,12 +31,12 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse/@product.Id">
+                    <a data-toggle="collapse" data-parent="#accordion" href=@string.Format("#collapse{0}", @product.Id)>
                        @product.Title
                     </a>
                 </h4>
             </div>
-            <div id="#collapse/@product.Id" class="panel-collapse collapse in">
+            <div id=@string.Format("collapse{0}", @product.Id) class="panel-collapse collapse">
                 <div class="panel-body">
                     <p>Category: @product.Category</p>
                     <p>Content: @product.Content</p>
