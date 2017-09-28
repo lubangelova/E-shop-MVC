@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using E_shop_MVC.Service.Data;
+using E_shop_MVC.Service.Web;
 using E_shop_MVC.Web.Infrastructure.Mapping;
 using E_shop_MVC.Web.ViewModels.Product;
 
@@ -13,11 +14,13 @@ namespace E_shop_MVC.Web.Controllers
     {
         private IProductsService products;
         private ICategoriesService categories;
+        private ICacheService cacheService;
 
-        public ProductController(IProductsService products, ICategoriesService categories)
+        public ProductController(IProductsService products, ICategoriesService categories, ICacheService cacheService)
         {
             this.products = products;
             this.categories = categories;
+            this.cacheService = cacheService;
         }
 
         public ActionResult Index()
@@ -25,9 +28,10 @@ namespace E_shop_MVC.Web.Controllers
             var products = this.products.GetAllProducts()
                 .To<ProductViewModel>()
                 .ToList();
-            var categories = this.categories.GetAllCategories()
+            var categories = this.cacheService.Get("categories", ()=>
+                this.categories.GetAllCategories()
                 .To<ProductCategoryViewModel>().
-                ToList();
+                ToList(),1800);
             var viewModel = new IndexViewModel
             {
                 Products = products,

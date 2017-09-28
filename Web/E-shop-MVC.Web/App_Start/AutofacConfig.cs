@@ -10,6 +10,7 @@ using Autofac.Integration.Mvc;
 using E_shop_MVC.Data;
 using E_shop_MVC.Data.Common;
 using E_shop_MVC.Service.Data;
+using E_shop_MVC.Service.Web;
 
 namespace E_shop_MVC.Web.App_Start
 {
@@ -46,6 +47,8 @@ namespace E_shop_MVC.Web.App_Start
         private static void RegisterServices(ContainerBuilder builder)
         {           
             builder.Register(x => new ApplicationDbContext()).As<DbContext>().InstancePerRequest();
+
+            builder.Register(x => new HttpCacheService()).As<ICacheService>().InstancePerRequest();
 
             builder.RegisterGeneric(typeof(DbRepository<>)).As(typeof(IDbRepository<>)).InstancePerRequest();
 

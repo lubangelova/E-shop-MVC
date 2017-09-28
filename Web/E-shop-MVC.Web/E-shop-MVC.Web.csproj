@@ -334,6 +334,10 @@
       <Project>{3BBF5550-4803-4DEB-8F8D-465EE6F9A44E}</Project>
       <Name>E-shop-MVC.Service.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Services\E-shop-MVC.Service.Web\E-shop-MVC.Service.Web.csproj">
+      <Project>{B2062333-ECE6-4872-962F-6E5AB9B928D6}</Project>
+      <Name>E-shop-MVC.Service.Web</Name>
+    </ProjectReference>
     <ProjectReference Include="..\E-shop-MVC.Web.Infrastructure\E-shop-MVC.Web.Infrastructure.csproj">
       <Project>{D660F245-5F0C-4D78-B252-85A05A4ACDB3}</Project>
       <Name>E-shop-MVC.Web.Infrastructure</Name>

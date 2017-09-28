@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3BBF5550-4803-4DEB-8F8D-465EE6F9A44E}</ProjectGuid>
+    <ProjectGuid>{B2062333-ECE6-4872-962F-6E5AB9B928D6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>E_shop_MVC.Service.Data</RootNamespace>
-    <AssemblyName>E-shop-MVC.Service.Data</AssemblyName>
+    <RootNamespace>E_shop_MVC.Service.Web</RootNamespace>
+    <AssemblyName>E-shop-MVC.Service.Web</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,27 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CategoriesService.cs" />
-    <Compile Include="ICategoriesService.cs" />
-    <Compile Include="IMessagesService.cs" />
-    <Compile Include="IProductsService.cs" />
-    <Compile Include="MessagesService.cs" />
-    <Compile Include="ProductsService.cs" />
+    <Compile Include="HttpCacheService.cs" />
+    <Compile Include="ICacheService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\Data\E-shop-MVC.Data.Common\E-shop-MVC.Data.Common.csproj">
-      <Project>{F025B4D5-E0AD-44C9-A6E2-2A03A350E297}</Project>
-      <Name>E-shop-MVC.Data.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Data\E-shop-MVC.Data.Models\E-shop-MVC.Data.Models.csproj">
-      <Project>{448B627F-2D5A-429F-9352-78DF1BF457BD}</Project>
-      <Name>E-shop-MVC.Data.Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\E-shop-MVC.Service.Web\E-shop-MVC.Service.Web.csproj">
-      <Project>{B2062333-ECE6-4872-962F-6E5AB9B928D6}</Project>
-      <Name>E-shop-MVC.Service.Web</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
