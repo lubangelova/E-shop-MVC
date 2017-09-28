@@ -10,17 +10,15 @@ using E_shop_MVC.Web.ViewModels.Product;
 
 namespace E_shop_MVC.Web.Controllers
 {
-    public class ProductController : Controller
+    public class ProductController : BaseController
     {
         private IProductsService products;
         private ICategoriesService categories;
-        private ICacheService cacheService;
 
-        public ProductController(IProductsService products, ICategoriesService categories, ICacheService cacheService)
+        public ProductController(IProductsService products, ICategoriesService categories)
         {
             this.products = products;
             this.categories = categories;
-            this.cacheService = cacheService;
         }
 
         public ActionResult Index()
@@ -28,7 +26,7 @@ namespace E_shop_MVC.Web.Controllers
             var products = this.products.GetAllProducts()
                 .To<ProductViewModel>()
                 .ToList();
-            var categories = this.cacheService.Get("categories", ()=>
+            var categories = this.Cache.Get("categories", ()=>
                 this.categories.GetAllCategories()
                 .To<ProductCategoryViewModel>().
                 ToList(),1800);

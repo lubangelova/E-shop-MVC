@@ -6,7 +6,7 @@ using E_shop_MVC.Service.Data;
 
 namespace E_shop_MVC.Web.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
 
         public HomeController()

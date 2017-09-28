@@ -14,7 +14,7 @@ using E_shop_MVC.Data.Models;
 namespace E_shop_MVC.Web.Controllers
 {
     [Authorize]
-    public class AccountController : Controller
+    public class AccountController : BaseController
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;

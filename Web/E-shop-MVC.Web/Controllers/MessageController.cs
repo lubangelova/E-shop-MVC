@@ -9,7 +9,7 @@ using E_shop_MVC.Web.ViewModels.Message;
 
 namespace E_shop_MVC.Web.Controllers
 {
-    public class MessageController: Controller
+    public class MessageController: BaseController
     {
         private IMessagesService messages;
         public MessageController(IMessagesService messages)

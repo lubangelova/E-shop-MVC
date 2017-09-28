@@ -12,7 +12,7 @@ using E_shop_MVC.Web.ViewModels.Manage;
 namespace E_shop_MVC.Web.Controllers
 {
     [Authorize]
-    public class ManageController : Controller
+    public class ManageController : BaseController
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;

@@ -11,6 +11,7 @@ using E_shop_MVC.Data;
 using E_shop_MVC.Data.Common;
 using E_shop_MVC.Service.Data;
 using E_shop_MVC.Service.Web;
+using E_shop_MVC.Web.Controllers;
 
 namespace E_shop_MVC.Web.App_Start
 {
@@ -54,6 +55,8 @@ namespace E_shop_MVC.Web.App_Start
 
             var servicesAssembly = Assembly.GetAssembly(typeof(IProductsService));
             builder.RegisterAssemblyTypes(servicesAssembly).AsImplementedInterfaces();
+
+            builder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly()).AssignableTo<BaseController>().PropertiesAutowired();
         }
     }
 }
