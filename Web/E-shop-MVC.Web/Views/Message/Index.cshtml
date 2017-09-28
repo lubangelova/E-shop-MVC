@@ -1,0 +1,24 @@
+﻿@model E_shop_MVC.Web.ViewModels.Message.IndexViewModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<h3>Messages</h3>
+
+    @if (Model.Messages.Count != 0)
+    {
+        <ul>
+            @foreach (var message in Model.Messages)
+            {
+            <li>
+                <a href="">@message.Title</a>
+            </li>
+            }
+         </ul>
+     }
+     else
+     {
+       <h3>There are no messages</h3>
+     }
+
+

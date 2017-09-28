@@ -42,7 +42,9 @@
   <ItemGroup>
     <Compile Include="CategoriesService.cs" />
     <Compile Include="ICategoriesService.cs" />
+    <Compile Include="IMessagesService.cs" />
     <Compile Include="IProductsService.cs" />
+    <Compile Include="MessagesService.cs" />
     <Compile Include="ProductsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
