@@ -52,5 +52,10 @@ namespace E_shop_MVC.Web.Controllers
         {
             return View();
         }
+
+        public ActionResult SendMessage()
+        {
+            return View();
+        }
     }
 }

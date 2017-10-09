@@ -42,7 +42,11 @@
                     <p>Category: @product.Category</p>
                     <p>Content: @product.Content</p>
                     <p>Price: @product.Price</p>
+                    <p>Seller: @product.Seller</p>
                 </div>
+                <ul class="nav navbar-nav col-md-8">
+                    <li>@Html.ActionLink("Send message to seller", "SendMessage", "Product")</li>
+                </ul>
             </div>
         </div>
     </div>

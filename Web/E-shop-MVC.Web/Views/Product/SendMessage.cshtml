@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "SendMessage";
+}
+<h3>Send new message</h3>
+<fieldset>
+    <div class="form-group">
+        <label for="tb-message-recipient">Recipient:</label>
+        <input type="text" id="tb-message-recipient" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="tb-message-title">Title:</label>
+        <input type="text" class="form-control" id="tb-message-title" />
+    </div>
+    <div class="form-group">
+        <label for="tb-message-content">Content:</label>
+        <textarea name="content" id="tb-message-content" class="form-control"></textarea>
+    </div>
+
+    <button class="btn btn-primary" id="btn-message-send">Send</button>
+</fieldset>

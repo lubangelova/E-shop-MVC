@@ -305,6 +305,7 @@
     <Content Include="Views\Product\Search.cshtml" />
     <Content Include="Views\Product\YourProducts.cshtml" />
     <Content Include="Views\Message\Index.cshtml" />
+    <Content Include="Views\Product\SendMessage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

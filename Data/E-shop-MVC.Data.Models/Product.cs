@@ -18,5 +18,7 @@ namespace E_shop_MVC.Data.Models
         public int CategoryId { get; set; }
 
         public virtual ProductCategory Category { get; set; }
+
+        public virtual ApplicationUser Seller { get; set; }
     }
 }

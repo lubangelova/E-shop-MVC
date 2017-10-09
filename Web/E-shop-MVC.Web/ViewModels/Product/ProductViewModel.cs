@@ -20,6 +20,8 @@ namespace E_shop_MVC.Web.ViewModels.Product
 
         public double Price { get; set; }
 
+        public ApplicationUser Seller { get; set; }
+
         public void CreateMappings(IMapperConfiguration configuration)
         {
             configuration.CreateMap<E_shop_MVC.Data.Models.Product, ProductViewModel>()
