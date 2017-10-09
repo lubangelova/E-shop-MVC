@@ -7,6 +7,7 @@ using E_shop_MVC.Data.Models;
 using E_shop_MVC.Service.Data;
 using E_shop_MVC.Service.Web;
 using E_shop_MVC.Web.Infrastructure.Mapping;
+using E_shop_MVC.Web.InputModels.Product;
 using E_shop_MVC.Web.ViewModels.Product;
 using Microsoft.AspNet.Identity;
 
@@ -55,21 +56,22 @@ namespace E_shop_MVC.Web.Controllers
             return View();
         }
 
-        public ActionResult AddProductToDb(Product product)
+        public ActionResult AddProductToDb(ProductInputModel input)
         {
             var userId = this.User.Identity.GetUserId();
 
-            var newProduct = new Product
+            var product = new Product
             {
-                Title = product.Title,
-                Content = product.Content,
-                Price = product.Price,
+                Title = input.Title,
+                Content = input.Content,
+                CategoryId=input.CategoryId,
+                Price = input.Price,
                 SellerId = userId
             };
 
-            this.products.Add(newProduct);
+            this.products.Add(product);
             this.products.SaveChanges();
-            return this.RedirectToAction("AddProduct", new { id = newProduct.Id, url = "new" });
+            return this.RedirectToAction("Index", new { id = product.Id, url = "new" });
 
         }
 
