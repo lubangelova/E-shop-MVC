@@ -17,10 +17,20 @@ namespace E_shop_MVC.Service.Data
             this.products = products;
         }
 
+        public void Add(Product product)
+        {
+           this.products.Add(product);
+        }
+
         public IQueryable<Product> GetAllProducts()
         {
             return this.products.All()
                 .OrderBy(x => x.Title);
+        }
+
+        public void SaveChanges()
+        {
+            this.products.Save();
         }
     }
 }

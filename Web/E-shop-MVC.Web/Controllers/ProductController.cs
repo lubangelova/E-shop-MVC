@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using E_shop_MVC.Data.Models;
 using E_shop_MVC.Service.Data;
 using E_shop_MVC.Service.Web;
 using E_shop_MVC.Web.Infrastructure.Mapping;
 using E_shop_MVC.Web.ViewModels.Product;
+using Microsoft.AspNet.Identity;
 
 namespace E_shop_MVC.Web.Controllers
 {
@@ -51,6 +53,24 @@ namespace E_shop_MVC.Web.Controllers
         public ActionResult AddProduct()
         {
             return View();
+        }
+
+        public ActionResult AddProductToDb(Product product)
+        {
+            var userId = this.User.Identity.GetUserId();
+
+            var newProduct = new Product
+            {
+                Title = product.Title,
+                Content = product.Content,
+                Price = product.Price,
+                SellerId = userId
+            };
+
+            this.products.Add(newProduct);
+            this.products.SaveChanges();
+            return this.RedirectToAction("AddProduct", new { id = newProduct.Id, url = "new" });
+
         }
 
         public ActionResult SendMessage()

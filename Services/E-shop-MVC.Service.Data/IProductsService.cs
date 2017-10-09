@@ -10,5 +10,9 @@ namespace E_shop_MVC.Service.Data
     public interface IProductsService
     {
         IQueryable<Product> GetAllProducts();
+
+        void Add(Product product);
+
+        void SaveChanges();
     }
 }
