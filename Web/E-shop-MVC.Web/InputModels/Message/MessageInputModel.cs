@@ -23,5 +23,10 @@ namespace E_shop_MVC.Web.InputModels.Message
         [Required]
         [Display(Name ="RecipientId")]
         public string RecipientId { get; set; }
+
+
+        [Required]
+        [Display(Name = "SenderId")]
+        public string SenderId { get; set; }
     }
 }

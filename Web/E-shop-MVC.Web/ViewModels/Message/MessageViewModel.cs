@@ -14,5 +14,7 @@ namespace E_shop_MVC.Web.ViewModels.Message
         public string Content { get; set; }
 
         public ApplicationUser Recipient { get; set; }
+
+        public ApplicationUser Sender { get; set; }
     }
 }

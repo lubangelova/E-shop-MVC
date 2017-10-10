@@ -15,6 +15,10 @@ namespace E_shop_MVC.Data.Models
 
         public string RecipientId { get; set; }
 
+        public string SenderId { get; set; }
+
         public virtual ApplicationUser Recipient { get; set; }
+
+        public virtual ApplicationUser Sender { get; set; }
     }
 }

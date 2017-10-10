@@ -37,7 +37,8 @@ namespace E_shop_MVC.Web.Controllers
             var userId = this.User.Identity.GetUserId();
             var message = new Message
             {
-                RecipientId = userId,
+                SenderId = userId,
+                RecipientId=input.RecipientId,
                 Title = input.Title,
                 Content = input.Content
             };
