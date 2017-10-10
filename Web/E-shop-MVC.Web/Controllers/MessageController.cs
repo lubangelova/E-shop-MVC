@@ -35,6 +35,7 @@ namespace E_shop_MVC.Web.Controllers
         public ActionResult AddMessageToDb(MessageInputModel input)
         {
             var userId = this.User.Identity.GetUserId();
+
             var message = new Message
             {
                 SenderId = userId,

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using E_shop_MVC.Data.Models;
 using E_shop_MVC.Service.Data;
 using E_shop_MVC.Service.Web;
