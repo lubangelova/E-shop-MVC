@@ -29,10 +29,13 @@ namespace E_shop_MVC.Web.Controllers
             var products = this.products.GetAllProducts()
                 .To<ProductViewModel>()
                 .ToList();
-            var categories = this.Cache.Get("categories", ()=>
+            var categories = this.categories.GetAllCategories()
+                .To<ProductCategoryViewModel>()
+                .ToList();
+            /*var categories = this.Cache.Get("categories", ()=>
                 this.categories.GetAllCategories()
                 .To<ProductCategoryViewModel>().
-                ToList(),1800);
+                ToList(),60);*/
             var viewModel = new IndexViewModel
             {
                 Products = products,
@@ -64,7 +67,7 @@ namespace E_shop_MVC.Web.Controllers
             {
                 Title = input.Title,
                 Content = input.Content,
-                CategoryId=input.CategoryId,
+                Category=input.Category,
                 Price = input.Price,
                 SellerId = userId
             };

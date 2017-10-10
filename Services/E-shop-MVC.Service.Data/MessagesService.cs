@@ -17,10 +17,20 @@ namespace E_shop_MVC.Service.Data
             this.messages = messages;
         }
 
+        public void Add(Message message)
+        {
+            this.messages.Add(message);
+        }
+
         public IQueryable<Message> GetAllMessages()
         {
             return this.messages.All()
                .OrderBy(x => x.Title);
+        }
+
+        public void SaveChanges()
+        {
+            this.messages.Save();
         }
     }
 }

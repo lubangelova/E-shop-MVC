@@ -10,5 +10,9 @@ namespace E_shop_MVC.Service.Data
     public interface IMessagesService
     {
         IQueryable<Message> GetAllMessages();
+
+        void Add(Message message);
+
+        void SaveChanges();
     }
 }

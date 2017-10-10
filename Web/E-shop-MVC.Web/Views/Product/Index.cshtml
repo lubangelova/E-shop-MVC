@@ -11,19 +11,18 @@
         <li>@Html.ActionLink("Add product", "AddProduct", "Product")</li>
     </ul>
 </nav>
-<h3><a href="">Categories</a></h3>
+<h3>Categories</h3>
 <ul>
     @if (Model.Categories.Count != 0)
     {
         foreach (var category in Model.Categories)
         {
-            <li>
-                <a href="">@category.Name</a>
-            </li>
+          <li style="list-style-type:none"><a href="">@category.Name</a></li>
         }
     }
 </ul>
 <hr />
+<h3>Products</h3>
 @if (Model.Products.Count != 0)
 {
     foreach (var product in Model.Products)

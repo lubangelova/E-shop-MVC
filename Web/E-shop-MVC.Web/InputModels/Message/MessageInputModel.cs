@@ -4,11 +4,10 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using E_shop_MVC.Data.Models;
 
-namespace E_shop_MVC.Web.InputModels.Product
+namespace E_shop_MVC.Web.InputModels.Message
 {
-    public class ProductInputModel
+    public class MessageInputModel
     {
         [Required]
         [Display(Name = "Title")]
@@ -22,15 +21,7 @@ namespace E_shop_MVC.Web.InputModels.Product
         public string Content { get; set; }
 
         [Required]
-        [Display(Name = "Category")]
-        public ProductCategory Category { get; set; }
-
-        [Required]
-        [Display(Name = "Price")]
-        public double Price { get; set; }
-
-        [Required]
-        [Display(Name ="SellerId")]
-        public string SellerId { get; set; }
+        [Display(Name ="RecipientId")]
+        public string RecipientId { get; set; }
     }
 }
