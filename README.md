@@ -9,13 +9,13 @@ Registered users can add new products for sale and sending messages to other use
 
 #Libraries/frameworks
 
--ASP.NET MVC
--Entity framework for accessing the database
--MS SQL Server as database back-end
--Bootstrap
--ASP.NET Identity System for managing users and roles
--Caching of data
--Autofac
--AutoMapper
--jQuery.Validation
+-ASP.NET MVC <br/>
+-Entity framework for accessing the database <br/>
+-MS SQL Server as database back-end <br/>
+-Bootstrap <br/>
+-ASP.NET Identity System for managing users and roles <br/>
+-Caching of data <br/>
+-Autofac <br/>
+-AutoMapper <br/>
+-jQuery.Validation <br/>
 
