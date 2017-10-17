@@ -72,11 +72,9 @@ namespace E_shop_MVC.Web.Controllers
                 Price = input.Price,
                 SellerId = userId
             };
-
-            this.products.Add(product);
-            this.products.SaveChanges();
-            return this.RedirectToAction("Index", new { id = product.Id, url = "new" });
-
+                this.products.Add(product);
+                this.products.SaveChanges();
+                return this.RedirectToAction("Index", new { id = product.Id, url = "new" });
         }
 
         public ActionResult SendMessage()

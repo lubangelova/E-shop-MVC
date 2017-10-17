@@ -11,7 +11,7 @@ Registered users can add new products for sale and sending messages to other use
 
 -ASP.NET MVC <br/>
 -Entity framework for accessing the database <br/>
--MS SQL Server as database back-end <br/>
+-MS SQL Server as database back-end (Server type: Database engine, Server name: .) <br/>
 -Bootstrap <br/>
 -ASP.NET Identity System for managing users and roles <br/>
 -Caching of data <br/>
