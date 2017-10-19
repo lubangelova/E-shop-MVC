@@ -2,7 +2,6 @@
 
 ASP.NET MVC application online shop.
 
-//This isn't work yet
 Unregistered users can see register and login form, home page, all products and search for product.
 Registered users can add new products for sale and sending messages to other users.
 

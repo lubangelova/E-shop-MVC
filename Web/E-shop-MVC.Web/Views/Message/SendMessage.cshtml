@@ -3,7 +3,7 @@
     ViewBag.Title = "SendMessage";
 }
 <h3>Send new message</h3>
-@using (Html.BeginForm("AddMessageToDb", "Message", FormMethod.Post, new { @class = "form-horizontal" }))
+@using (Html.BeginForm("SendMessage", "Message", FormMethod.Post, new { @class = "form-horizontal" }))
 {
     @Html.AntiForgeryToken()
 

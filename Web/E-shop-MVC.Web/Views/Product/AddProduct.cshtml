@@ -12,7 +12,7 @@
     </ul>
 </nav>
 
-@using (Html.BeginForm("AddProductToDb", "Product", FormMethod.Post, new { @class = "form-horizontal" }))
+@using (Html.BeginForm("AddProduct", "Product", FormMethod.Post, new { @class = "form-horizontal" }))
 {
     @Html.AntiForgeryToken()
 

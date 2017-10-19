@@ -50,17 +50,23 @@ namespace E_shop_MVC.Web.Controllers
             return View();
         }
 
+        [Authorize]
         public ActionResult YourProducts()
         {
             return View();
         }
 
+        [HttpGet]
+        [Authorize]
         public ActionResult AddProduct()
         {
-            return View();
+            var model = new ProductInputModel();
+            return View(model);
         }
 
-        public ActionResult AddProductToDb(ProductInputModel input)
+        [HttpPost]
+        [Authorize]
+        public ActionResult AddProduct(ProductInputModel input)
         {
             var userId = this.User.Identity.GetUserId();
 
@@ -77,9 +83,6 @@ namespace E_shop_MVC.Web.Controllers
                 return this.RedirectToAction("Index", new { id = product.Id, url = "new" });
         }
 
-        public ActionResult SendMessage()
-        {
-            return View();
-        }
+       
     }
 }

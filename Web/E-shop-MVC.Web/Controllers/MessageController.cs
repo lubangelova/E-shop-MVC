@@ -31,8 +31,18 @@ namespace E_shop_MVC.Web.Controllers
             };
             return View(viewModel);
         }
+        
+        [HttpGet]
+        [Authorize]
+        public ActionResult SendMessage()
+        {
+            var model = new MessageInputModel();
+            return View(model);
+        }
 
-        public ActionResult AddMessageToDb(MessageInputModel input)
+        [HttpPost]
+        [Authorize]
+        public ActionResult SendMessage(MessageInputModel input)
         {
             var userId = this.User.Identity.GetUserId();
 
