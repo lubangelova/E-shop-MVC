@@ -68,7 +68,7 @@ namespace E_shop_MVC.Web.Controllers
         [Authorize]
         public ActionResult AddProduct(ProductInputModel input)
         {
-            var userId = this.User.Identity.GetUserId();
+            var userId = this.User.Identity.GetUserName();
 
             var product = new Product
             {
