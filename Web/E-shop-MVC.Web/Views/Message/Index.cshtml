@@ -7,12 +7,20 @@
 
     @if (Model.Messages.Count != 0)
     {
-         foreach (var message in Model.Messages)
-         {
-         <div>
-            <a href="">@message.Title</a>
-         </div>
-         }
+         <table>
+             <tr>
+                 <th width="200">Title</th>
+                 <th width="600">Content</th>
+             </tr>
+             @foreach (var message in Model.Messages)
+             {
+             <tr>
+                 <td><a href="">@message.Title</a></td>
+                 <td><a href="">@message.Content</a></td>
+             </tr>
+            }
+         </table>
+         
      }
      else
      {
