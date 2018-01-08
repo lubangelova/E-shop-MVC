@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using E_shop_MVC.Data;
 using E_shop_MVC.Data.Models;
 using E_shop_MVC.Service.Data;
 using E_shop_MVC.Service.Web;
@@ -83,6 +84,18 @@ namespace E_shop_MVC.Web.Controllers
                 return this.RedirectToAction("Index", new { id = product.Id, url = "new" });
         }
 
-       
+        public ActionResult Search(string searchString)
+        {
+            var products = this.products.GetAllProducts();
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                products = products.Where(p => p.Title.Contains(searchString));
+            }
+
+            return View(products);
+        }
+
+
     }
 }

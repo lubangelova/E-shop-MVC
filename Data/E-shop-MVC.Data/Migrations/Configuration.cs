@@ -10,7 +10,7 @@ namespace E_shop_MVC.Data.Migrations
     {
         public Configuration()
         {
-            this.AutomaticMigrationsEnabled = true;
+            this.AutomaticMigrationsEnabled = false;
             this.AutomaticMigrationDataLossAllowed = false;
         }
 
