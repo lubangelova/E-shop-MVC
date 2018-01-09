@@ -69,7 +69,7 @@ namespace E_shop_MVC.Web.Controllers
         [Authorize]
         public ActionResult AddProduct(ProductInputModel input)
         {
-            var userId = this.User.Identity.GetUserName();
+            var userId = this.User.Identity.GetUserId();
 
             var product = new Product
             {
@@ -84,16 +84,22 @@ namespace E_shop_MVC.Web.Controllers
                 return this.RedirectToAction("Index", new { id = product.Id, url = "new" });
         }
 
-        public ActionResult Search(string searchString)
+        public ActionResult SearchProduct(ProductInputModel input)
         {
-            var products = this.products.GetAllProducts();
+            var products = this.products.GetAllProducts()
+                            .To<ProductViewModel>()
+                            .ToList();
 
-            if (!String.IsNullOrEmpty(searchString))
+            if (!String.IsNullOrEmpty(input.Title))
             {
-                products = products.Where(p => p.Title.Contains(searchString));
+                products = products.Where(p => p.Title.Contains(input.Title)).ToList();
             }
+            var viewModel = new IndexViewModel()
+            {
+                Products = products
+            };
 
-            return View(products);
+            return View(viewModel);
         }
 
 

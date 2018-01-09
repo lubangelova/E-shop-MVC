@@ -1,0 +1,41 @@
+﻿@model E_shop_MVC.Web.ViewModels.Product.IndexViewModel
+@{
+    ViewBag.Title = "SearchProduct";
+}
+
+
+@if (Model.Products.Count != 0)
+{
+    foreach (var product in Model.Products)
+    {
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href=@string.Format("#collapse{0}", @product.Id)>
+                            @product.Title
+                        </a>
+                    </h4>
+                </div>
+                <div id=@string.Format("collapse{0}", @product.Id) class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <p>Category: @product.Category</p>
+                        <p>Content: @product.Content</p>
+                        <p>Price: @product.Price</p>
+                        <p>Seller: @product.Seller</p>
+                    </div>
+                    <ul class="nav navbar-nav col-md-8">
+                        <li>@Html.ActionLink("Send message to seller", "SendMessage", "Message")</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    }
+}
+else
+{
+    <h3>There are no results for this product</h3>
+}
+
+
+

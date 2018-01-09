@@ -4,7 +4,7 @@
 }
 
 <h2>Search for products</h2>
-@using (Html.BeginForm("Search", "Product", FormMethod.Post, new { @class = "form-horizontal" }))
+@using (Html.BeginForm("SearchProduct", "Product", FormMethod.Post, new { @class = "form-horizontal" }))
 {
     <p>@Html.TextBoxFor(model => model.Title, new { @id = "tb-product-title", @class = "form-control" })</p> 
     <input type="submit" value="Search" />
